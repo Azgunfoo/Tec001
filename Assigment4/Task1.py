@@ -1,13 +1,12 @@
-def is_valid_course_code(code: str) -> bool:
+def Valid_course (code):
     if len(code) != 6:
         return False
-    
     for i in range(3):
-        if not code[i].isupper() or not code[i].isalpha():
+        if not ('A' <= code[i] <= 'Z'):
             return False
-            
     for i in range(3, 6):
         if not code[i].isdigit():
             return False
-            
     return True
+code = input("Enter course code: ")
+print(Valid_course(code))
